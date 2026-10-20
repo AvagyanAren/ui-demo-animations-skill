@@ -1,0 +1,71 @@
+.app-view .pb-app.pb-app--supplier.is-detail .pb-page--detail {
+  opacity: 1;
+  transform: none;
+}
+
+/* Fake cursor: shown only in the central window; side windows animate without one */
+.cursor {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 22px;
+  height: 22px;
+  margin: -2px 0 0 -3px;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 2px 3px rgba(13, 28, 46, 0.28));
+  transition:
+    transform 0.74s cubic-bezier(0.45, 0.05, 0.2, 1),
+    opacity 0.4s var(--ease);
+}
+
+.cursor.cursor--main {
+  display: block;
+}
+
+.cursor.is-follow {
+  transition: opacity 0.4s var(--ease);
+}
+
+.cursor.is-on {
+  opacity: 1;
+}
+
+.cursor svg {
+  display: block;
+  transform-origin: 3px 2px;
+  transition: transform 0.12s var(--ease);
+}
+
+.cursor.is-click svg {
+  transform: scale(0.82);
+}
+
+.cursor::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--sky-500);
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.cursor.is-click::after {
+  animation: cursor-ping 0.5s var(--ease) both;
+}
+
+@keyframes cursor-ping {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.4);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }

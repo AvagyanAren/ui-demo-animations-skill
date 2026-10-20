@@ -1,0 +1,11 @@
+{
+  "skill_name": "ui-demo-animations",
+  "evals": [
+    {"id": 1, "prompt": "вот ссылка на экран задач в фигме https://www.figma.com/design/XXXX/App?node-id=1-2 — сделай в блоке на лендинге анимацию, где курсор открывает задачу, ставит галочку в чек-листе и меняет статус. Ничего лишнего не добавляй", "expected_output": "Reproduces the linked screen exactly; story has move/hover/press/result order; reports no or explicitly listed gap-fills; no extra UI."},
+    {"id": 2, "prompt": "хочу на главной показать наш кабинет в действии: окна покупателя и поставщика, курсор сам двигается и нажимает, потом сцена плавно меняется на другую роль", "expected_output": "Uses scene engine pattern: independent stories per window, swap only after slowest story, slide out left / in from right, no blur; asks for or fetches real screens instead of inventing them."},
+    {"id": 3, "prompt": "добавь микроанимации на страницу, ощущение как у attio, но не копируй один в один", "expected_output": "Original reveal-on-scroll, count-up, sliding indicator, crossfade; reduced-motion respected; no gradients/glow/emoji; idempotent effects."},
+    {"id": 4, "prompt": "вот макет договора из фигмы (3 состояния), покажи как он переходит от согласования к отправке поставщику, и ещё докинь что-нибудь, чтобы блок не выглядел пустым", "expected_output": "Exact screens for the 3 states in a crossfade flow with step chips; the 'something extra' is a minimal in-style gap-fill and is explicitly reported; does not invent product claims."},
+    {"id": 5, "prompt": "экран из фигмы большой и приходит обрезанным, правая колонка пропала. как это починить и вставить на сайт", "expected_output": "Fetches missing sub-nodes by id, converts with the bundled script, verifies against screenshot/innerText."},
+    {"id": 6, "prompt": "write a hero section with a looping product demo for our SaaS (no design provided)", "expected_output": "Notes that no design was supplied, builds gap-fill UI in a neutral consistent style, and lists everything it invented."}
+  ]
+}

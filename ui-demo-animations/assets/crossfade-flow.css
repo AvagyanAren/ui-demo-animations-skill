@@ -1,0 +1,22 @@
+/* Contract flow */
+.cflow { position: relative; }
+.cflow__stack { position: relative; }
+.cflow__layer { opacity: 0; transition: opacity .6s cubic-bezier(.33,1,.68,1); }
+.cflow__layer:not(:first-child) { position: absolute; inset: 0; }
+.cflow__layer.is-on { opacity: 1; }
+.cflow__chips { display: flex; gap: 8px; justify-content: center; margin-top: 14px; position: relative; z-index: 2; }
+.cflow__chips button {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px;
+  border: 1px solid var(--hair); background: #fff; color: #6f7988; font: 500 13px/1 inherit; font-family: inherit; cursor: pointer;
+  transition: background-color .25s, color .25s, border-color .25s;
+}
+.cflow__chips button i {
+  display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; font-style: normal; font-size: 11px;
+  background: #eef0f3; color: #6f7988; transition: background-color .25s, color .25s;
+}
+.cflow__chips button.is-on { color: #1c1d1f; border-color: #d3d8df; }
+.cflow__chips button.is-on i { background: #023361; color: #fff; }
+@media (prefers-reduced-motion: reduce) { .cflow__layer { transition: none; } }
+.cflow { display: flex; flex-direction: column; }
+.cflow__chips { order: -1; margin: 0 0 14px; }
+

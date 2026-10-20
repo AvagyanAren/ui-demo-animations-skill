@@ -1,0 +1,6 @@
+/* Scene change: old windows leave to the left, new ones enter from the right.
+   No blur, no will-change on big layers: they made the second loop lag. */
+.scene .scene__stage { transition: opacity .6s cubic-bezier(.33,1,.68,1), translate .65s cubic-bezier(.33,1,.68,1); }
+.scene.is-leaving .scene__stage { translate: -140px 0; opacity: 0; }
+.scene.is-entering .scene__stage { translate: 140px 0; opacity: 0; transition: none; }
+/* JS: setLeaving("out") -> 650ms -> swap content + setLeaving("in") -> 2x requestAnimationFrame -> setLeaving(false) */
