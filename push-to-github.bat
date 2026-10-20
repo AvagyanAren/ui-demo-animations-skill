@@ -18,6 +18,8 @@ echo Pushing to GitHub. If a sign-in window opens, sign in.
 echo.
 git push -u origin main
 if errorlevel 1 goto failed
+git tag -f v1.0.0
+git push origin v1.0.0 --force
 echo.
 echo DONE: pushed to https://github.com/AvagyanAren/ui-demo-animations-skill
 pause
@@ -28,6 +30,8 @@ echo.
 echo Normal push failed. The repository probably already has files (for example a README created on GitHub).
 set /p FORCE=Type y and Enter to REPLACE repository contents, or just Enter to cancel: 
 if /i "%FORCE%"=="y" git push -u origin main --force
+if /i "%FORCE%"=="y" git tag -f v1.0.0
+if /i "%FORCE%"=="y" git push origin v1.0.0 --force
 echo.
 pause
 exit /b 1

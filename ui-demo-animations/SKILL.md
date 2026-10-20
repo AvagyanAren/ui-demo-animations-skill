@@ -1,5 +1,7 @@
 ---
 name: ui-demo-animations
+metadata:
+  version: "1.0.0"
 description: Build animated product-interface demos for landing pages and websites, where real app screens (from a Figma mockup or link) play out a scripted story with a moving cursor that hovers, clicks, opens dropdowns and modals, plus smooth scroll and micro-animations around them. Use whenever the user wants interface animations, an animated hero with app windows, a "show the product in action" section, cursor-driven demos, screen-to-screen transitions, or micro-animations on a landing page, or shares a Figma link/node of a screen to animate. Also use for Russian requests like "анимация интерфейса", "курсор нажимает", "микроанимации", "показать продукт на лендинге".
 ---
 

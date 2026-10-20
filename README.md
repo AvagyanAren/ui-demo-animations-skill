@@ -1,5 +1,7 @@
 # UI Demo Animations
 
+**Version 1.0.0** · [Changelog](CHANGELOG.md)
+
 **A skill for Claude that turns real app screens into short animated product demos for your website.**
 
 A cursor moves across your interface, opens a dropdown, ticks a checkbox, presses a button, and the screen reacts. Around it, the page gets calm micro-animations: elements fade in as you scroll, numbers count up, an active menu item slides to the next one.
@@ -139,6 +141,10 @@ node figma_to_html.mjs saved-figma-response.json my-screen my-scope
 ```
 
 You get `out/my-screen.html` and `out/my-screen.css`. The font is set to Manrope inside the script; search for `Manrope` to change it.
+
+## Versions
+
+This project uses [semantic versioning](https://semver.org): `MAJOR.MINOR.PATCH`. See [CHANGELOG.md](CHANGELOG.md) for what changed. To install a specific version, use its tag, for example `npx skills add AvagyanAren/ui-demo-animations-skill#v1.0.0` (if your CLI version does not support tags, download that release from the Releases page).
 
 ## Good to know (limits)
 
