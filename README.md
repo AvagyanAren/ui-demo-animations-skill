@@ -15,11 +15,27 @@ Built from a real landing-page project (a B2B tender platform) and the feedback 
 
 ## Install
 
-1. Download this repository, or take the `ui-demo-animations/` folder.
-2. In Claude, add it as a skill (zip the `ui-demo-animations` folder into a `.skill` file, or place the folder where your Claude app or Claude Code loads skills from).
-3. Ask for an animated demo, for example:
-   - "Here is the Figma link to the tasks screen. Animate it on the landing: the cursor opens a task and ticks the checklist. Don't add anything extra."
-   - "Add micro-animations to this page, similar in feel to Attio but not a copy."
+**Claude app (desktop / web):** download `ui-demo-animations.skill` from this repository and open it in Claude. It appears as a file card with a **Save skill** button; click it to install. (The button is shown when your organisation allows creating skills.)
+
+**Terminal (any agent that supports skills, including Claude Code):**
+
+```
+npx skills add AvagyanAren/ui-demo-animations-skill
+```
+
+Add `-g` to install globally (all projects) instead of the current project. This uses the open [`skills` CLI](https://skills.sh/docs/cli).
+
+**Claude Code, manually:** copy the `ui-demo-animations/` folder to `~/.claude/skills/` (all projects) or to `.claude/skills/` inside a project (that project only):
+
+```
+git clone https://github.com/AvagyanAren/ui-demo-animations-skill.git
+cp -r ui-demo-animations-skill/ui-demo-animations ~/.claude/skills/
+```
+
+Then ask for an animated demo, for example:
+
+- "Here is the Figma link to the tasks screen. Animate it on the landing: the cursor opens a task and ticks the checklist. Don't add anything extra."
+- "Add micro-animations to this page, similar in feel to Attio but not a copy."
 
 ## What is inside
 
@@ -70,4 +86,4 @@ Output goes to `out/my-screen.html` and `out/my-screen.css`. The font is forced 
 
 Главное правило: если вы дали ссылку на макет, узел Figma или точный запрос, экран воспроизводится строго как есть, без выдумок. Если чего-то не хватает, skill достраивает это в вашем стиле и перечисляет всё, что добавил сам.
 
-Установка: скачайте репозиторий, возьмите папку `ui-demo-animations/` и подключите её как skill в Claude. Дальше просто просите: «вот ссылка на экран из Figma, анимируй его на лендинге», «добавь микроанимации на страницу».
+Установка: в приложении Claude откройте файл `ui-demo-animations.skill` и нажмите «Save skill»; в терминале выполните `npx skills add AvagyanAren/ui-demo-animations-skill`; вручную в Claude Code положите папку `ui-demo-animations/` в `~/.claude/skills/`. Дальше просто просите: «вот ссылка на экран из Figma, анимируй его на лендинге», «добавь микроанимации на страницу».
